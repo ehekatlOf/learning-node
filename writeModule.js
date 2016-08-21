@@ -1,12 +1,11 @@
 var fs = require ('fs');
+var path = require ("path");
 
-var files = fs.readdir(process.argv[2],function(err, data){
-    if (err) {
-        return console.log("wait for it");
-    }
-    return data;
-});
-
-console.log();
-
-module.exports.files = files;
+module.exports = function file(dir, filter){
+    fs.readdir(dir,function(err, data){
+        if (err) {
+            return console.log("wait for it");
+        }
+        return console.log(path.extname(data));
+    });  
+};

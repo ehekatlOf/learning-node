@@ -2,4 +2,4 @@ var fs = require("fs");
 
 var readDir = require("./writeModule.js");
 
-console.log(readDir.files(/etc/));  
+console.log(readDir.file);  
